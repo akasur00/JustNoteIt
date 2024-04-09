@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:"http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Details</title>
 </head>
 <body>
-
+    <h1 th:text="${notebook.name}"></h1>
+    <p>Latest Note Id: <span th:text="${notebook.getLatestNoteId()}"></span> </p>
+    <a th:href="@{/notebooks/{id}/add (id=${notebook.id})}">Add Note</a>
+    <p>
+        <form action="" method="post">
+        <input type="text" name="noteEntry">
+        <input type="submit">
+    </form>
+    </p>
+        <ul>
+            <li th:each="note: ${notebook.notes}">
+                <span th:text="${note.id}"></span>
+                -
+                <span th:text="${note.title}"></span>
+            </li>
+        </ul>
+        <a th:href="@{/notebooks}">Zurück</a>
 </body>
 </html>
