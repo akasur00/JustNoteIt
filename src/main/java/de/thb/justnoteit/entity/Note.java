@@ -1,16 +1,29 @@
 package de.thb.justnoteit.entity;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Note {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private String description;
-
-    public Note(long id, String title, String description, boolean done) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
-        this.done = done;
-    }
+    private long notebookId;
 
     @Override
     public String toString(){
@@ -18,42 +31,7 @@ public class Note {
         sb.append("\nid: ").append(this.id);
         sb.append("\ntitle: ").append(this.title);
         sb.append("\ndescription: ").append(this.description);
-        sb.append("\ndone: ").append(this.done);
         return sb.toString();
     }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public boolean isDone() {
-        return done;
-    }
-
-    public void setDone(boolean done) {
-        this.done = done;
-    }
-
-    private boolean done;
 }
 

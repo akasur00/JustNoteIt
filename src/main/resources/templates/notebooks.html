@@ -9,7 +9,7 @@
     <ul>
         <li th:each="notebook: ${notebooks}">
             <a th:href="@{/notebooks/{id} (id=${notebook.id})}"
-               th:text="${notebook.name}"></a>
+               th:text="${notebook.title}"></a>
         </li>
     </ul>
 

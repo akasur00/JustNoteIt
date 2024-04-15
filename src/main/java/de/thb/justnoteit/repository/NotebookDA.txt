@@ -39,7 +39,7 @@ public class NotebookDA {
     public List<Notebook> findByName(String name) {
         return notebooks
                 .stream()
-                .filter(notebook -> notebook.getName().equals(name))
+                .filter(notebook -> notebook.getTitle().equals(name))
                 .toList();
     }
 

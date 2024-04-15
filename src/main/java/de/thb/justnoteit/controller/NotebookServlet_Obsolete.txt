@@ -14,10 +14,10 @@ import java.util.Enumeration;
 import java.util.List;
 
 @WebServlet(name = "NotebookController", value = "/NotebookController")
-public class NotebookServlet extends HttpServlet {
+public class NotebookServlet_Obsolete extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private DeskService deskService;
-    public NotebookServlet(){
+    public NotebookServlet_Obsolete(){
         super();
         deskService = new DeskService();
     }
@@ -38,7 +38,7 @@ public class NotebookServlet extends HttpServlet {
                 response.getWriter()
                         .append("<li>")
                         .append("<a href=localhost:8080/NotebookController?id=" + notebook.getId() + ">")
-                        .append(notebook.getName() + "</a>");
+                        .append(notebook.getTitle() + "</a>");
                         for (Note note : notebook.getNotes()){
                             response.getWriter()
                                     .append("<ul> <li>")

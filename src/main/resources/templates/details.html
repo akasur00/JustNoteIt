@@ -5,8 +5,7 @@
     <title>Details</title>
 </head>
 <body>
-    <h1 th:text="${notebook.name}"></h1>
-    <p>Latest Note Id: <span th:text="${notebook.getLatestNoteId()}"></span> </p>
+    <h1 th:text="${notebook.title}"></h1>
     <a th:href="@{/notebooks/{id}/add (id=${notebook.id})}">Add Note</a>
     <p>
         <form action="" method="post">
